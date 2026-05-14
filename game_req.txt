@@ -1,0 +1,22 @@
+-> when a player clicks on a cell, capacity -1 balls are assigned to the cell of that player 
+
+    done
+
+-> on succesive step a player can only click on cell owned by them
+    done
+
+-> explode on capacity, and give one ball to each of its orthogonally adjecent neighbours
+
+    donw
+
+-> game ends when entire board belongs to only one player or time ends
+
+
+
+-> implement player timeer and game timmer
+
+
+
+-> score: add 1 point for adding an element to your cell, or if your explosion hits another player cell, add one point
+
+
