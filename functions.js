@@ -50,12 +50,6 @@ function imgAllocation(cell, row, col){
 }
 
 
-
-
-
-
-
-
 function explosion(cell , row, col){
     
     if(board[row][col].capacity==4){
@@ -254,7 +248,6 @@ function explosion(cell , row, col){
 }
 
 
-
 function checkWinner(){
     let no_of_blue_cell = 0;
     let no_of_red_cell = 0;
@@ -271,9 +264,30 @@ function checkWinner(){
     if(no_of_blue_cell==0 && turn>1){
         winner="red";
         gameover = true;
+        return;
     }
     if(no_of_red_cell==0 && turn>1){
         winner="blue";
         gameover = true;
+        return;
     }
+    
+}
+
+
+function timer(){
+    const timeInterval = setInterval(function(){
+        time_remaining--;
+        let min = Math.floor(time_remaining/60);
+        let sec = Math.floor(time_remaining%60);
+        h_game_time.innerText = "Time remaining: " + min + ":" + sec;
+        if(time_remaining==0){
+            clearInterval(timeInterval);
+        }
+    }, 1000)
+}
+
+
+function scoreCalculator(){
+    
 }

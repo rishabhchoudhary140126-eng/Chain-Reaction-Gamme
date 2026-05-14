@@ -10,7 +10,7 @@
     donw
 
 -> game ends when entire board belongs to only one player or time ends
-
+    
 
 
 -> implement player timeer and game timmer

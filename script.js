@@ -2,9 +2,20 @@ let turn = 0;  // if turn- even - blues turn, else red.
 let currentPlayer = "blue";
 let winner;
 let gameover = false;
+
+let time_remaining = 180;
+
 const cells = document.querySelectorAll(".cell");
+const h_player_turn = document.getElementById("h_player_turn");
+const h_game_time = document.getElementById("h_game_time");
+
+
+
+
 
 let board = [];
+
+
 //deefining capacity and other object elements
 for(let row = 0; row < 6; row++){
     board[row] = [];
@@ -30,12 +41,16 @@ for(let row = 0; row < 6; row++){
 cells.forEach(function(cell){
     cell.addEventListener("click", function(){
         
-
+        if(time_remaining==0){
+            alert("time ran out!");
+            gameover = true;
+        }
+        
         const row = Number(cell.getAttribute("cell_row"));
-
+        
         const col = Number(cell.getAttribute("cell_col"));
         //turn++;
-
+        
         //defining current player
         if(turn%2==0){
             currentPlayer="blue";
@@ -43,12 +58,20 @@ cells.forEach(function(cell){
         else {
             currentPlayer="red";
         }
+        
+        
 
         //block move on enemy cell
         if(board[row][col].owner != "none" && board[row][col].owner != currentPlayer ){
             return;
         }
 
+        if((turn+1)%2==0){     //for next plaers turn
+            h_player_turn.innerText = "Blue player's turn";
+        }
+        else {
+            h_player_turn.innerText = "Red player's turn";
+        }
 
         if(turn<2){
             // first 2 move allow all cell, except opponents
@@ -56,6 +79,10 @@ cells.forEach(function(cell){
             board[row][col].count = board[row][col].capacity-1;
             imgAllocation(cell, row, col);
             turn++;
+            if(turn==1){
+                timer();
+            }
+            
         }
 
         else {
@@ -76,17 +103,20 @@ cells.forEach(function(cell){
             }
 
             turn++;
+            
         }
         console.log(turn, currentPlayer);
         checkWinner();
         setTimeout(function(){
 
                 if(gameover==true){
-                    alert(winner + "has won the game");
+                    alert(winner + " has won the game");
                     return;
                 }
 
             }, 300);
+        
+        
         
 
     });
