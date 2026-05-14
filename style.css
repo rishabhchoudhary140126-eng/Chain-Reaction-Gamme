@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
 }
-.cell {
+.cell, img {
     height: 7.8vh;
     width: 8vb;
     background-color: rgb(97, 9, 148);
