@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain reaction game -DELTA INDUCTION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="game_heading"><span id="h_game_name">Chain Reaction Game</span> <span id="h_player_turn">Blue Players turn</span> <span id="h_game_time">game timers</span></h1>
+
+    <div id="grid_box">
+        <div id="main_box1" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="0" ></button>
+        <button class="cell" cell_row = "1" cell_col ="0" ></button>
+        <button class="cell" cell_row = "2" cell_col ="0" ></button>
+        <button class="cell" cell_row = "3" cell_col ="0" ></button>
+        <button class="cell" cell_row = "4" cell_col ="0" ></button>
+        <button class="cell" cell_row = "5" cell_col ="0" ></button>
+
+    </div>
+    <div id="main_box2" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="1" ></button>
+        <button class="cell" cell_row = "1" cell_col ="1" ></button>
+        <button class="cell" cell_row = "2" cell_col ="1" ></button>
+        <button class="cell" cell_row = "3" cell_col ="1" ></button>
+        <button class="cell" cell_row = "4" cell_col ="1" ></button>
+        <button class="cell" cell_row = "5" cell_col ="1" ></button>
+
+    </div>
+    <div id="main_box3" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="2" ></button>
+        <button class="cell" cell_row = "1" cell_col ="2" ></button>
+        <button class="cell" cell_row = "2" cell_col ="2" ></button>
+        <button class="cell" cell_row = "3" cell_col ="2" ></button>
+        <button class="cell" cell_row = "4" cell_col ="2" ></button>
+        <button class="cell" cell_row = "5" cell_col ="2" ></button>
+
+    </div>
+    <div id="main_box4" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="3" ></button>
+        <button class="cell" cell_row = "1" cell_col ="3" ></button>
+        <button class="cell" cell_row = "2" cell_col ="3" ></button>
+        <button class="cell" cell_row = "3" cell_col ="3" ></button>
+        <button class="cell" cell_row = "4" cell_col ="3" ></button>
+        <button class="cell" cell_row = "5" cell_col ="3" ></button>
+
+    </div>
+    <div id="main_box5" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="4" ></button>
+        <button class="cell" cell_row = "1" cell_col ="4" ></button>
+        <button class="cell" cell_row = "2" cell_col ="4" ></button>
+        <button class="cell" cell_row = "3" cell_col ="4" ></button>
+        <button class="cell" cell_row = "4" cell_col ="4" ></button>
+        <button class="cell" cell_row = "5" cell_col ="4" ></button>
+
+    </div>
+    <div id="main_box6" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="5" ></button>
+        <button class="cell" cell_row = "1" cell_col ="5" ></button>
+        <button class="cell" cell_row = "2" cell_col ="5" ></button>
+        <button class="cell" cell_row = "3" cell_col ="5" ></button>
+        <button class="cell" cell_row = "4" cell_col ="5" ></button>
+        <button class="cell" cell_row = "5" cell_col ="5" ></button>
+
+    </div>
+    <div id="main_box7" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="6" ></button>
+        <button class="cell" cell_row = "1" cell_col ="6" ></button>
+        <button class="cell" cell_row = "2" cell_col ="6" ></button>
+        <button class="cell" cell_row = "3" cell_col ="6" ></button>
+        <button class="cell" cell_row = "4" cell_col ="6" ></button>
+        <button class="cell" cell_row = "5" cell_col ="6" ></button>
+
+    </div>
+    <div id="main_box8" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="7" ></button>
+        <button class="cell" cell_row = "1" cell_col ="7" ></button>
+        <button class="cell" cell_row = "2" cell_col ="7" ></button>
+        <button class="cell" cell_row = "3" cell_col ="7" ></button>
+        <button class="cell" cell_row = "4" cell_col ="7" ></button>
+        <button class="cell" cell_row = "5" cell_col ="7" ></button>
+
+    </div>
+    <div id="main_box9" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="8" ></button>
+        <button class="cell" cell_row = "1" cell_col ="8" ></button>
+        <button class="cell" cell_row = "2" cell_col ="8" ></button>
+        <button class="cell" cell_row = "3" cell_col ="8" ></button>
+        <button class="cell" cell_row = "4" cell_col ="8" ></button>
+        <button class="cell" cell_row = "5" cell_col ="8" ></button>
+
+    </div>
+    <div id="main_box10" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="9" ></button>
+        <button class="cell" cell_row = "1" cell_col ="9" ></button>
+        <button class="cell" cell_row = "2" cell_col ="9" ></button>
+        <button class="cell" cell_row = "3" cell_col ="9" ></button>
+        <button class="cell" cell_row = "4" cell_col ="9" ></button>
+        <button class="cell" cell_row = "5" cell_col ="9" ></button>
+
+    </div>
+    <div id="main_box11" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="10" ></button>
+        <button class="cell" cell_row = "1" cell_col ="10" ></button>
+        <button class="cell" cell_row = "2" cell_col ="10" ></button>
+        <button class="cell" cell_row = "3" cell_col ="10" ></button>
+        <button class="cell" cell_row = "4" cell_col ="10" ></button>
+        <button class="cell" cell_row = "5" cell_col ="10" ></button>
+
+    </div>
+    <div id="main_box12" class ="cell_rows">
+
+        <button class="cell" cell_row = "0" cell_col ="11" ></button>
+        <button class="cell" cell_row = "1" cell_col ="11" ></button>
+        <button class="cell" cell_row = "2" cell_col ="11" ></button>
+        <button class="cell" cell_row = "3" cell_col ="11" ></button>
+        <button class="cell" cell_row = "4" cell_col ="11" ></button>
+        <button class="cell" cell_row = "5" cell_col ="11" ></button>
+
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

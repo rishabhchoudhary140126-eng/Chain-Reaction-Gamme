@@ -1,0 +1,41 @@
+*{
+    background-color: rgb(182, 26, 230);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#game_heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(132, 0, 255);
+    color: white;
+    padding: 10px;
+    height: 2vh;
+}
+#h_game_name, #h_player_turn, #h_game_time  {
+    background-color: rgb(132, 0, 255);
+    line-height: 2vh;
+    font-size: 2vh;
+}
+
+
+#grid_box {
+    display: inline-block;
+    width: 100vw;
+    margin-top: 3px;
+}
+.cell_rows {
+    height: 7.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cell {
+    height: 7.8vh;
+    width: 8vb;
+    background-color: rgb(97, 9, 148);
+    border: 1px solid whitesmoke;
+
+}
