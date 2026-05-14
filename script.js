@@ -244,9 +244,13 @@ function explosion(cell , row, col){
             imgAllocation(neighbourCell, row, col-1);
         }
     }
-    imgAllocation(cell, row, col);
     board[row][col].owner = "none";
     board[row][col].count = 0;
+    if(board[row][col].count == 0){
+        cell.innerHTML = "";
+        return;
+    }
+    imgAllocation(cell, row, col);
 
 }
 
