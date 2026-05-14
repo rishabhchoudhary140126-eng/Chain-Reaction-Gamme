@@ -275,19 +275,38 @@ function checkWinner(){
 }
 
 
-function timer(){
+function gameTimer(){
     const timeInterval = setInterval(function(){
         time_remaining--;
         let min = Math.floor(time_remaining/60);
         let sec = Math.floor(time_remaining%60);
-        h_game_time.innerText = "Time remaining: " + min + ":" + sec;
-        if(time_remaining==0){
+        h_game_time.innerText = "Time remaining: " + min + ":" + sec + " ";
+        if(time_remaining==0 || gameover==true){
             clearInterval(timeInterval);
         }
     }, 1000)
 }
 
+function playerTimer(){
+    const timeInterval = setInterval(function(){
+        play_time_left--;
+        h_player_timer.innerText = " Players time: " + play_time_left;
+        if(play_time_left==0){
+            turn++;
+            play_time_left=15
+            if((turn)%2==0){     //for next plaers turn
+                h_player_turn.innerText = "Blue player's turn";
+            }
+            else {
+                h_player_turn.innerText = "Red player's turn";
+            }
+        }
+        if(gameover==true){
+            clearInterval(timeInterval);
+        }
+    }, 1000)
+}
 
 function scoreCalculator(){
-    
+
 }

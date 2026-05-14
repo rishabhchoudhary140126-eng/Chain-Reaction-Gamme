@@ -4,10 +4,12 @@ let winner;
 let gameover = false;
 
 let time_remaining = 180;
+let play_time_left = 15;
 
 const cells = document.querySelectorAll(".cell");
 const h_player_turn = document.getElementById("h_player_turn");
 const h_game_time = document.getElementById("h_game_time");
+const h_player_timer = document.getElementById("h_player_timer");
 
 
 
@@ -41,10 +43,7 @@ for(let row = 0; row < 6; row++){
 cells.forEach(function(cell){
     cell.addEventListener("click", function(){
         
-        if(time_remaining==0){
-            alert("time ran out!");
-            gameover = true;
-        }
+        
         
         const row = Number(cell.getAttribute("cell_row"));
         
@@ -65,6 +64,7 @@ cells.forEach(function(cell){
         if(board[row][col].owner != "none" && board[row][col].owner != currentPlayer ){
             return;
         }
+        play_time_left = 15;
 
         if((turn+1)%2==0){     //for next plaers turn
             h_player_turn.innerText = "Blue player's turn";
@@ -80,7 +80,8 @@ cells.forEach(function(cell){
             imgAllocation(cell, row, col);
             turn++;
             if(turn==1){
-                timer();
+                gameTimer();
+                playerTimer();
             }
             
         }

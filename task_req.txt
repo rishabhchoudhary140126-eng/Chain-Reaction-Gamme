@@ -7,14 +7,14 @@
 
 -> explode on capacity, and give one ball to each of its orthogonally adjecent neighbours
 
-    donw
+    done
 
 -> game ends when entire board belongs to only one player or time ends
-    
+    done
 
 
 -> implement player timeer and game timmer
-
+    done
 
 
 -> score: add 1 point for adding an element to your cell, or if your explosion hits another player cell, add one point

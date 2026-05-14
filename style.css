@@ -14,10 +14,30 @@
     padding: 10px;
     height: 2vh;
 }
-#h_game_name, #h_player_turn, #h_game_time  {
+
+#h_game_name {
+    text-align: left;
     background-color: rgb(132, 0, 255);
     line-height: 2vh;
     font-size: 2vh;
+    align-items:start;
+    display: inline-block;
+}
+
+#h_player_turn{
+    flex: 1;
+    background-color: rgb(132, 0, 255);
+    line-height: 2vh;
+    font-size: 2vh;
+    text-align: center;
+}
+
+#h_game_time, #h_player_timer {
+    background-color: rgb(132, 0, 255);
+    line-height: 2vh;
+    font-size: 2vh;
+    align-items:end;
+    margin: 3px;
 }
 
 
