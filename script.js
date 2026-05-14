@@ -13,9 +13,18 @@ for(let row = 0; row < 6; row++){
         board[row][col] = {
 
             player : "none",
-            count : 0
-
+            count : 0,
+            capacity : 0
         };
+        if((row==0 && col==0) || (row == 0 && col ==11) || (row==5&&col==0) || (row==5 && col == 11)){
+            board[row][col].capacity = 2;
+        }
+        else if(col==0 || col ==11 || row ==0 || row ==5){
+            board[row][col].capacity=3;
+        }
+        else {
+            board[row][col].capacity=4;
+        }
 
     }
 
@@ -30,9 +39,21 @@ cells.forEach(function(cell){
         const col = Number(cell.getAttribute("cell_col"));
 
         board[row][col].count++;
-        console.log(row, col, board[row][col].count);
+        console.log(row, col, board[row][col].count, board[row][col].capacity);
 
-        if(board[row][col].count==0){
+        if(board[row][col].count== board[row][col].capacity){
+            //explosion and reset count to 0
+            cell.innerHTML = `<img src="imagegs/explosion.gif" class="ball">`;
+            setTimeout(function(){
+
+                board[row][col].count = 0;
+
+                cell.innerHTML = "";
+
+            }, 600);
+        }
+
+        else if(board[row][col].count==0){
             //no img
             cell.innerHTML = "";
         }
@@ -48,17 +69,7 @@ cells.forEach(function(cell){
             //3 ball img
             cell.innerHTML = `<img src="imagegs/three-blue-ball.png" class="ball">`;
         }
-        else if(board[row][col].count==4){
-            //explosion and reset count to 0
-            cell.innerHTML = `<img src="imagegs/explosion.gif" class="ball">`;
-            setTimeout(function(){
-
-                board[row][col].count = 0;
-
-                cell.innerHTML = "";
-
-            }, 600);
-        }
+        
 
     });
 
