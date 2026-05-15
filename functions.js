@@ -427,18 +427,18 @@ function explosion(cell , row, col){
         else if(row==5 && col==0){
 
             if(currentPlayer=="blue"){
-                if(board[row+1][col].owner=="red" ){
-                    blue_score++;
-                }
-                // if(board[row][col+1].owner=="red"){
+                // if(board[row+1][col].owner=="red" ){
                 //     blue_score++;
                 // }
-                // if( board[row-1][col].owner=="red"){
-                //     blue_score++;
-                // }
-                if(board[row][col-1].owner=="red"){
+                if(board[row][col+1].owner=="red"){
                     blue_score++;
                 }
+                if( board[row-1][col].owner=="red"){
+                    blue_score++;
+                }
+                // if(board[row][col-1].owner=="red"){
+                //     blue_score++;
+                // }
             }
             else if(currentPlayer=="red"){
                 // if(board[row+1][col].owner=="blue" ){
