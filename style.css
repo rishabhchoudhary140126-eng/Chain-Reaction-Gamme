@@ -1,8 +1,14 @@
 *{
-    background-color: rgb(182, 26, 230);
     margin: 0;
     padding: 0;
     text-align: center;
+}
+body{
+    background: linear-gradient(
+        135deg,
+        rgb(182, 26, 230),
+        rgb(97, 9, 148)
+    );
 }
 
 #game_heading{
@@ -13,6 +19,7 @@
     color: white;
     padding: 10px;
     height: 2vh;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
 #h_game_name {
@@ -74,6 +81,7 @@
 
 .cell{
     transition: all 0.2s ease;
+    border-radius: 8px;
 }
 .cell:hover{
     transform: scale(1.05);
@@ -81,4 +89,26 @@
 }
 .cell:active{
     transform: scale(0.95);
+}
+
+
+
+
+
+@keyframes explodeShake{
+
+    0%{ transform: translate(0px, 0px); }
+
+    25%{ transform: translate(2px, -2px); }
+
+    50%{ transform: translate(-2px, 2px); }
+
+    75%{ transform: translate(2px, 2px); }
+
+    100%{ transform: translate(0px, 0px); }
+
+}
+
+.explode{
+    animation: explodeShake 0.3s;
 }
