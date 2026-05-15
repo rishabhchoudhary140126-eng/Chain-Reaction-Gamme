@@ -556,6 +556,7 @@ function checkWinner(){
 
 function gameTimer(){
     const timeInterval = setInterval(function(){
+        if(paused) return;
         time_remaining--;
         let min = Math.floor(time_remaining/60);
         let sec = Math.floor(time_remaining%60);
@@ -568,6 +569,7 @@ function gameTimer(){
 
 function playerTimer(){
     const timeInterval = setInterval(function(){
+        if(paused) return;
         play_time_left--;
         h_player_timer.innerText = " Players time: " + play_time_left;
         if(play_time_left==0){

@@ -31,8 +31,17 @@
     font-size: 1.2vh;
     text-align: center;
 }
-
-#h_game_time, #h_player_timer, #blue_score, #red_score {
+#pause_btn {
+    margin-right: 4px;
+    color: aliceblue;
+    background-color: rgb(97, 9, 148);
+    line-height: normal;
+    height: 3vh;
+    width: 7vh;
+    font-size: 1.3vh;
+    text-align: center;
+}
+#h_game_time, #h_player_timer, #blue_score, #red_score{
     background-color: rgb(132, 0, 255);
     line-height: normal;
     font-size: 1.2vh;

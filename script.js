@@ -9,6 +9,12 @@ let red_score = 0;
 let time_remaining = 180;
 let play_time_left = 15;
 
+
+let paused = false;
+const pause_btn = document.getElementById("pause_btn");
+const pauseSound = new Audio("sounds/pause.mp3");
+const resumeSound = new Audio("sounds/play.mp3");
+
 const cells = document.querySelectorAll(".cell");
 const h_player_turn = document.getElementById("h_player_turn");
 const h_game_time = document.getElementById("h_game_time");
@@ -48,7 +54,7 @@ for(let row = 0; row < 6; row++){
 //clicking mech,
 cells.forEach(function(cell){
     cell.addEventListener("click", function(){
-        
+        if(paused) return;
         
         
         const row = Number(cell.getAttribute("cell_row"));
@@ -134,6 +140,7 @@ cells.forEach(function(cell){
                     if(gameover){
                         winSound.currentTime = 0;
                         winSound.play();
+                        h_player_turn.innerText = winner;
                         alert(winner);
                     }
 
@@ -162,6 +169,7 @@ cells.forEach(function(cell){
                 if(gameover==true){
                     winSound.currentTime = 0;
                     winSound.play();
+                    h_player_turn.innerText = winner;
                     alert(winner);
                     return;
                 }
@@ -177,3 +185,25 @@ cells.forEach(function(cell){
 });
 
 
+
+pause_btn.addEventListener("click", function(){
+
+    if (paused == true) {
+        paused = false;
+    } 
+    else {
+        paused = true;
+    }
+
+    if(paused==true){
+        pause_btn.innerText = "Resume";
+        pauseSound.currentTime = 0;
+        pauseSound.play();
+    }
+    else {
+        pause_btn.innerText = "Pause";
+        resumeSound.currentTime = 0;
+        resumeSound.play();
+    }
+
+})
