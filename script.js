@@ -114,8 +114,16 @@ cells.forEach(function(cell){
                 else if (currentPlayer=="red"){
                     red_score = red_score + board[row][col].count;
                 }
+                imgAllocation(cell, row, col);
+                setTimeout(function(){
+
+                    
+
+                    explosion(cell , row , col);
+
+                }, 600);
+
                 
-                explosion(cell , row , col);
             }
 
             else{
