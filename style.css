@@ -59,3 +59,17 @@
     border: 1px solid whitesmoke;
 
 }
+
+
+
+
+.cell{
+    transition: all 0.2s ease;
+}
+.cell:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px white;
+}
+.cell:active{
+    transform: scale(0.95);
+}

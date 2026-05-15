@@ -16,8 +16,9 @@ const h_player_timer = document.getElementById("h_player_timer");
 const blue_score_head = document.getElementById("blue_score");
 const red_score_head = document.getElementById("red_score");
 
-
-
+const clickSound = new Audio("sounds/click.mp3");
+const explosionSound = new Audio("sounds/explosion.mp3");
+const winSound = new Audio("sounds/winner.mp3");
 
 
 let board = [];
@@ -82,6 +83,10 @@ cells.forEach(function(cell){
             // first 2 move allow all cell, except opponents
             board[row][col].owner = currentPlayer;
             board[row][col].count = board[row][col].capacity-1;
+            
+            clickSound.currentTime = 0;
+            clickSound.play();
+
             if(currentPlayer=="red"){
                 red_score = red_score + board[row][col].count;
             }
@@ -105,6 +110,9 @@ cells.forEach(function(cell){
                 return;
             }
 
+            clickSound.currentTime = 0;
+            clickSound.play();
+
             board[row][col].count++;
             if(board[row][col].count==board[row][col].capacity){
                 //explosion happens, 
@@ -115,14 +123,17 @@ cells.forEach(function(cell){
                     red_score = red_score + board[row][col].count;
                 }
                 imgAllocation(cell, row, col);
+                explosionSound.currentTime=0;
+                explosionSound.play();
                 setTimeout(function(){
 
                     
-
                     explosion(cell , row , col);
                     checkWinner();
 
                     if(gameover){
+                        winSound.currentTime = 0;
+                        winSound.play();
                         alert(winner);
                     }
 
@@ -149,6 +160,8 @@ cells.forEach(function(cell){
         setTimeout(function(){
 
                 if(gameover==true){
+                    winSound.currentTime = 0;
+                    winSound.play();
                     alert(winner);
                     return;
                 }
