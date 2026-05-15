@@ -32,7 +32,7 @@
     text-align: center;
 }
 
-#h_game_time, #h_player_timer {
+#h_game_time, #h_player_timer, #blue_score, #red_score {
     background-color: rgb(132, 0, 255);
     line-height: 2vh;
     font-size: 2vh;

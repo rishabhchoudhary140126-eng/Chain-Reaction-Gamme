@@ -3,6 +3,9 @@ let currentPlayer = "blue";
 let winner;
 let gameover = false;
 
+let blue_score = 0;
+let red_score = 0;
+
 let time_remaining = 180;
 let play_time_left = 15;
 
@@ -10,6 +13,8 @@ const cells = document.querySelectorAll(".cell");
 const h_player_turn = document.getElementById("h_player_turn");
 const h_game_time = document.getElementById("h_game_time");
 const h_player_timer = document.getElementById("h_player_timer");
+const blue_score_head = document.getElementById("blue_score");
+const red_score_head = document.getElementById("red_score");
 
 
 
@@ -77,6 +82,12 @@ cells.forEach(function(cell){
             // first 2 move allow all cell, except opponents
             board[row][col].owner = currentPlayer;
             board[row][col].count = board[row][col].capacity-1;
+            if(currentPlayer=="red"){
+                red_score = red_score + board[row][col].count;
+            }
+            else if(currentPlayer=="blue"){
+                blue_score=blue_score + board[row][col].count;
+            }
             imgAllocation(cell, row, col);
             turn++;
             if(turn==1){
@@ -97,10 +108,24 @@ cells.forEach(function(cell){
             board[row][col].count++;
             if(board[row][col].count==board[row][col].capacity){
                 //explosion happens, 
-                explosion(cell , row , col);
+                if(currentPlayer=="blue"){
+                    blue_score = board[row][col].count + blue_score;
                 }
+                else if (currentPlayer=="red"){
+                    red_score = red_score + board[row][col].count;
+                }
+                
+                explosion(cell , row , col);
+            }
+
             else{
                 imgAllocation(cell, row, col);
+                if(currentPlayer=="blue"){
+                    blue_score++;
+                }
+                else if(currentPlayer=="red"){
+                    red_score++;
+                }
             }
 
             turn++;
@@ -111,14 +136,15 @@ cells.forEach(function(cell){
         setTimeout(function(){
 
                 if(gameover==true){
-                    alert(winner + " has won the game");
+                    alert(winner);
                     return;
                 }
 
             }, 300);
         
-        
-        
+    
+        blue_score_head.innerText = "Blue Score: " + blue_score;
+        red_score_head.innerText = "Red Score: " + red_score;
 
     });
 

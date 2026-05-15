@@ -53,6 +53,35 @@ function imgAllocation(cell, row, col){
 function explosion(cell , row, col){
     
     if(board[row][col].capacity==4){
+        if(currentPlayer=="blue"){
+            if(board[row+1][col].owner=="red" ){
+                blue_score++;
+            }
+            if(board[row][col+1].owner=="red"){
+                blue_score++;
+            }
+            if( board[row-1][col].owner=="red"){
+                blue_score++;
+            }
+            if(board[row][col-1].owner=="red"){
+                blue_score++;
+            }
+        }
+        else if(currentPlayer=="red"){
+            if(board[row+1][col].owner=="blue" ){
+                red_score++;
+            }
+            if(board[row][col+1].owner=="blue"){
+                red_score++;
+            }
+            if( board[row-1][col].owner=="blue"){
+                red_score++;
+            }
+            if(board[row][col-1].owner=="blue"){
+                red_score++;
+            }
+        }
+
         board[row+1][col].count++;
         board[row+1][col].owner = currentPlayer;
         let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -88,6 +117,37 @@ function explosion(cell , row, col){
 
     else if(board[row][col].capacity==3){
         if(row==0){
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                if(board[row][col+1].owner=="red"){
+                    blue_score++;
+                }
+                // if( board[row-1][col].owner=="red"){
+                //     blue_score++;
+                // }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                if(board[row+1][col].owner=="blue" ){
+                    red_score++;
+                }
+                if(board[row][col+1].owner=="blue"){
+                    red_score++;
+                }
+                // if( board[row-1][col].owner=="blue"){
+                //     red_score++;
+                // }
+                if(board[row][col-1].owner=="blue"){
+                    red_score++;
+                }
+            }
+
+
+
             board[row+1][col].count++;
             board[row+1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -114,6 +174,36 @@ function explosion(cell , row, col){
             
         }
         else if(row==5){
+
+            if(currentPlayer=="blue"){
+                // if(board[row+1][col].owner=="red" ){
+                //     blue_score++;
+                // }
+                if(board[row][col+1].owner=="red"){
+                    blue_score++;
+                }
+                if( board[row-1][col].owner=="red"){
+                    blue_score++;
+                }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                // if(board[row+1][col].owner=="blue" ){
+                //     red_score++;
+                // }
+                if(board[row][col+1].owner=="blue"){
+                    red_score++;
+                }
+                if( board[row-1][col].owner=="blue"){
+                    red_score++;
+                }
+                if(board[row][col-1].owner=="blue"){
+                    red_score++;
+                }
+            }
+
             board[row-1][col].count++;
             board[row-1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row-1}"][cell_col="${col}"]`)
@@ -139,6 +229,36 @@ function explosion(cell , row, col){
             }
         }
         else if(col==0){
+
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                if(board[row][col+1].owner=="red"){
+                    blue_score++;
+                }
+                if( board[row-1][col].owner=="red"){
+                    blue_score++;
+                }
+                // if(board[row][col-1].owner=="red"){
+                //     blue_score++;
+                // }
+            }
+            else if(currentPlayer=="red"){
+                if(board[row+1][col].owner=="blue" ){
+                    red_score++;
+                }
+                if(board[row][col+1].owner=="blue"){
+                    red_score++;
+                }
+                if( board[row-1][col].owner=="blue"){
+                    red_score++;
+                }
+                // if(board[row][col-1].owner=="blue"){
+                //     red_score++;
+                // }
+            }
+
             board[row+1][col].count++;
             board[row+1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -164,6 +284,36 @@ function explosion(cell , row, col){
             }
         }
         else{
+
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                // if(board[row][col+1].owner=="red"){
+                //     blue_score++;
+                // }
+                if( board[row-1][col].owner=="red"){
+                    blue_score++;
+                }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                if(board[row+1][col].owner=="blue" ){
+                    red_score++;
+                }
+                // if(board[row][col+1].owner=="blue"){
+                //     red_score++;
+                // }
+                if( board[row-1][col].owner=="blue"){
+                    red_score++;
+                }
+                if(board[row][col-1].owner=="blue"){
+                    red_score++;
+                }
+            }
+
             board[row+1][col].count++;
             board[row+1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -193,6 +343,36 @@ function explosion(cell , row, col){
     }
     else if(board[row][col].capacity==2){
         if(row==0 && col ==0){
+
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                if(board[row][col+1].owner=="red"){
+                    blue_score++;
+                }
+                // if( board[row-1][col].owner=="red"){
+                //     blue_score++;
+                // }
+                // if(board[row][col-1].owner=="red"){
+                //     blue_score++;
+                // }
+            }
+            else if(currentPlayer=="red"){
+                if(board[row+1][col].owner=="blue" ){
+                    red_score++;
+                }
+                if(board[row][col+1].owner=="blue"){
+                    red_score++;
+                }
+                // if( board[row-1][col].owner=="blue"){
+                //     red_score++;
+                // }
+                // if(board[row][col-1].owner=="blue"){
+                //     red_score++;
+                // }
+            }
+
             board[row+1][col].count++;
             board[row+1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -204,6 +384,36 @@ function explosion(cell , row, col){
             imgAllocation(neighbourCell, row, col+1);
         }
         else if(row==0 && col==11){
+
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                // if(board[row][col+1].owner=="red"){
+                //     blue_score++;
+                // }
+                // if( board[row-1][col].owner=="red"){
+                //     blue_score++;
+                // }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                if(board[row+1][col].owner=="blue" ){
+                    red_score++;
+                }
+                // if(board[row][col+1].owner=="blue"){
+                //     red_score++;
+                // }
+                // if( board[row-1][col].owner=="blue"){
+                //     red_score++;
+                // }
+                if(board[row][col-1].owner=="blue"){
+                    red_score++;
+                }
+            }
+
             board[row+1][col].count++;
             board[row+1][col].owner = currentPlayer;
             let neighbourCell = document.querySelector(`[cell_row="${row+1}"][cell_col="${col}"]`)
@@ -215,6 +425,36 @@ function explosion(cell , row, col){
             imgAllocation(neighbourCell, row, col-1);
         }
         else if(row==5 && col==0){
+
+            if(currentPlayer=="blue"){
+                if(board[row+1][col].owner=="red" ){
+                    blue_score++;
+                }
+                // if(board[row][col+1].owner=="red"){
+                //     blue_score++;
+                // }
+                // if( board[row-1][col].owner=="red"){
+                //     blue_score++;
+                // }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                // if(board[row+1][col].owner=="blue" ){
+                //     red_score++;
+                // }
+                if(board[row][col+1].owner=="blue"){
+                    red_score++;
+                }
+                if( board[row-1][col].owner=="blue"){
+                    red_score++;
+                }
+                // if(board[row][col-1].owner=="blue"){
+                //     red_score++;
+                // }
+            }
+
             board[row-1][col].count++;
             board[row-1][col].owner = currentPlayer;
             neighbourCell = document.querySelector(`[cell_row="${row-1}"][cell_col="${col}"]`)
@@ -226,6 +466,36 @@ function explosion(cell , row, col){
             imgAllocation(neighbourCell, row, col+1);
         }
         else if(row==5 && col==11){
+
+            if(currentPlayer=="blue"){
+                // if(board[row+1][col].owner=="red" ){
+                //     blue_score++;
+                // }
+                // if(board[row][col+1].owner=="red"){
+                //     blue_score++;
+                // }
+                if( board[row-1][col].owner=="red"){
+                    blue_score++;
+                }
+                if(board[row][col-1].owner=="red"){
+                    blue_score++;
+                }
+            }
+            else if(currentPlayer=="red"){
+                // if(board[row+1][col].owner=="blue" ){
+                //     red_score++;
+                // }
+                // if(board[row][col+1].owner=="blue"){
+                //     red_score++;
+                // }
+                if( board[row-1][col].owner=="blue"){
+                    red_score++;
+                }
+                if(board[row][col-1].owner=="blue"){
+                    red_score++;
+                }
+            }
+
             board[row-1][col].count++;
             board[row-1][col].owner = currentPlayer;
             neighbourCell = document.querySelector(`[cell_row="${row-1}"][cell_col="${col}"]`)
@@ -262,18 +532,27 @@ function checkWinner(){
         }
     }
     if(no_of_blue_cell==0 && turn>1){
-        winner="red";
+        winner = "Red has won the game";
         gameover = true;
         return;
     }
     if(no_of_red_cell==0 && turn>1){
-        winner="blue";
+        winner = "Blue has won the game";
         gameover = true;
         return;
     }
-    
-}
 
+
+    if(blue_score>red_score){
+        winner = "Blue has won the game";
+    }
+    else if( blue_score<red_score){
+        winner = "Red has won the game";
+    }
+    else if(blue_score == red_score){
+        winner = "Match Draw!!";
+    }
+}
 
 function gameTimer(){
     const timeInterval = setInterval(function(){
@@ -308,5 +587,5 @@ function playerTimer(){
 }
 
 function scoreCalculator(){
-
+    
 }
