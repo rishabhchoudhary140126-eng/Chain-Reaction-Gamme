@@ -120,6 +120,11 @@ cells.forEach(function(cell){
                     
 
                     explosion(cell , row , col);
+                    checkWinner();
+
+                    if(gameover){
+                        alert(winner);
+                    }
 
                 }, 600);
 

@@ -18,8 +18,8 @@
 #h_game_name {
     text-align: left;
     background-color: rgb(132, 0, 255);
-    line-height: 2vh;
-    font-size: 2vh;
+    line-height: normal;
+    font-size: 1.2vh;
     align-items:start;
     display: inline-block;
 }
@@ -27,15 +27,15 @@
 #h_player_turn{
     flex: 1;
     background-color: rgb(132, 0, 255);
-    line-height: 2vh;
-    font-size: 2vh;
+    line-height: normal;
+    font-size: 1.2vh;
     text-align: center;
 }
 
 #h_game_time, #h_player_timer, #blue_score, #red_score {
     background-color: rgb(132, 0, 255);
-    line-height: 2vh;
-    font-size: 2vh;
+    line-height: normal;
+    font-size: 1.2vh;
     align-items:end;
     margin: 3px;
 }
