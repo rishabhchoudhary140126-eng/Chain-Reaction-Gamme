@@ -4,11 +4,7 @@
     text-align: center;
 }
 body{
-    background: linear-gradient(
-        135deg,
-        rgb(182, 26, 230),
-        rgb(97, 9, 148)
-    );
+    background: linear-gradient(135deg, rgb(182, 26, 230), rgb(97, 9, 148));
 }
 
 #game_heading{
@@ -38,7 +34,7 @@ body{
     font-size: 1.2vh;
     text-align: center;
 }
-#pause_btn {
+#pause_btn, #restart_btn{
     margin-right: 4px;
     color: aliceblue;
     background-color: rgb(97, 9, 148);
@@ -47,7 +43,21 @@ body{
     width: 7vh;
     font-size: 1.3vh;
     text-align: center;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
+#pause_btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px white;
+}
+#restart_btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px white;
+}
+
+
 #h_game_time, #h_player_timer, #blue_score, #red_score{
     background-color: rgb(132, 0, 255);
     line-height: normal;
@@ -71,8 +81,10 @@ body{
 .cell, img {
     height: 7.8vh;
     width: 8vb;
-    background-color: rgb(97, 9, 148);
+    background: linear-gradient(145deg , rgb(120,20,170) , rgb(80,0,120));
     border: 1px solid whitesmoke;
+    box-shadow: 0 0 5px rgba(255,255,255,0.15);
+    cursor: pointer;
 
 }
 
@@ -99,16 +111,37 @@ body{
 
     0%{ transform: translate(0px, 0px); }
 
-    25%{ transform: translate(2px, -2px); }
+    25%{ transform: translate(4px, -4px); }
 
-    50%{ transform: translate(-2px, 2px); }
+    50%{ transform: translate(-4px, 4px); }
 
-    75%{ transform: translate(2px, 2px); }
+    75%{ transform: translate(4px, 4px); }
 
     100%{ transform: translate(0px, 0px); }
 
 }
 
+
+
+
+@keyframes flash{
+    
+    0%{
+        filter: brightness(1);
+    }
+    
+    50%{
+        filter: brightness(2);
+    }
+    
+    100%{
+        filter: brightness(1);
+    }
+
+}
+
+
 .explode{
-    animation: explodeShake 0.3s;
+    animation: explodeShake 0.3s, flash 0.3s;
+
 }

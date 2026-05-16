@@ -14,6 +14,12 @@ let paused = false;
 const pause_btn = document.getElementById("pause_btn");
 const pauseSound = new Audio("sounds/pause.mp3");
 const resumeSound = new Audio("sounds/play.mp3");
+let restartSound = new Audio("sounds/restart.mp3");
+
+
+let restart_btn = document.getElementById("restart_btn");
+
+
 
 const cells = document.querySelectorAll(".cell");
 const h_player_turn = document.getElementById("h_player_turn");
@@ -122,6 +128,7 @@ cells.forEach(function(cell){
             board[row][col].count++;
             if(board[row][col].count==board[row][col].capacity){
                 //explosion happens, 
+                cell.classList.add("explode");
                 if(currentPlayer=="blue"){
                     blue_score = board[row][col].count + blue_score;
                 }
@@ -133,7 +140,6 @@ cells.forEach(function(cell){
                 explosionSound.play();
                 setTimeout(function(){
 
-                    
                     explosion(cell , row , col);
                     checkWinner();
 
@@ -207,3 +213,34 @@ pause_btn.addEventListener("click", function(){
     }
 
 })
+
+restart_btn.addEventListener("click", function(){
+    restartSound.currentTime =0;
+    restartSound.play();
+    for(let row = 0; row<6; row++){
+        for(let col =0; col<12; col++){
+            
+            let cell = document.querySelector(`[cell_row="${row}"][cell_col="${col}"]`);
+            cell.innerHTML = "";
+            board[row][col].count = 0;
+            board[row][col].owner = "none";
+            
+        }
+    }
+    red_score = 0;
+    blue_score=0;
+    turn =0;
+    currentPlayer="blue";
+    time_remaining = 180;
+    play_time_left = 15;
+    paused = false;
+    gameover = false;
+    winner = "";
+    h_player_turn.innerText = "Blue player's turn";
+    h_game_time.innerText = "Time remaining: 3:00";
+    h_player_timer.innerText = "Players time: 15";
+    blue_score_head.innerText = 0;
+    red_score_head.innerText = 0;
+    
+})
+
