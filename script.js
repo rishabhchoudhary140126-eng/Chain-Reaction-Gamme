@@ -61,6 +61,17 @@ for(let row = 0; row < 6; row++){
 cells.forEach(function(cell){
     cell.addEventListener("click", function(){
         if(paused) return;
+        if(time_remaining == 0){
+            let won = "Draw, no one";
+            if(red_score>blue_score){
+                won = red;
+            }
+            else if(red_score<blue_score){
+                won = blue;
+            }
+            alert("Time has ran out " + won + " has won the game");
+            return;
+        }
         
         
         const row = Number(cell.getAttribute("cell_row"));

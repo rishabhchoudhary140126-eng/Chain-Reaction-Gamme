@@ -588,8 +588,6 @@ function playerTimer(){
     }, 1000)
 }
 
-function scoreCalculator(){
-    
-}
+
 
 
