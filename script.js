@@ -6,7 +6,7 @@ let gameover = false;
 let blue_score = 0;
 let red_score = 0;
 
-let time_remaining = 5;
+let time_remaining = 180;
 let play_time_left = 15;
 
 
